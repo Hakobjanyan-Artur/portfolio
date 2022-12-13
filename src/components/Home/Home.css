@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(../../fonts/Roboto-Medium.ttf);
+}
+.home .container {
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-around;
+    position: relative;
+}
+.home .about .container{
+    margin-top: 20px;
+}
+.home .about-iframe {
+    position: absolute;
+    transition: .8s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transform: scale(0);
+    background: #42424280;
+}
+.home .mh {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 1;
+    transform: scale(100%);
+}
+.home .about-iframe .hidden {
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Roboto';
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 80%;
+}
+.home .about-iframe .iframe {
+    width: 80%;
+    height: 70%;
+    border: 1px solid #424242;
+    border-radius: 20px;
+    overflow-y: auto;
+    background: #262626;
+}
+.home .container .homeLeft {
+    max-width: 40%;
+}
+.home .container .homeLeft .homeImg {
+    background: #000;
+    border-radius: 50px;
+    box-shadow: 0 0 10px #000;
+    overflow: hidden;
+}
+.home .container .homeLeft .homeImg img {
+    transform: translateY(80px);
+}
+.home .container .homeRigth {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 50%;
+}
+.home .container .homeRigth .h1 {
+    display: block;
+    font-size: 40px;
+    color: #fff;
+    line-height: 60px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.home .container .homeRigth .span {
+    color: orange;
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.home .container .homeRigth p {
+    color: #fff;
+    line-height: 30px;
+}
+.home .container .homeRigth button {
+    width: 250px;
+    height: 50px;
+    border: 1px solid orange;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 1s;
+}
+.home .container .homeRigth button .btnTXT {
+    transform: translateX(20px);
+    transition: .8s;
+}
+.home .container .homeRigth button .btnIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .8s;
+}
+.home .container .homeRigth button:hover {
+    background: orange;
+}
+.home .container .homeRigth button:hover .btnIcon {
+    transform: translateX(200px);
+}
+.home .container .homeRigth button:hover .btnTXT {
+    transform: translateX(-30px);
+}
+
+@media(max-width : 960px) {
+   .home .container {
+        max-width: 850px;
+   }
+}
+@media(max-width : 850px) {
+   .home .container {
+        max-width: 750px;
+    }
+}
+@media(max-width : 750px) {
+   .home .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 100px;
+        gap: 50px;
+    }
+    .home .container .homeLeft .homeImg img {
+        transform: translateY(30px);
+    }
+    .home .about-iframe .iframe {
+        width: 90%;
+        height: 90%;
+    }
+}
+@media(max-width: 400px) {
+
+    .home .container .homeRigth .h1 {
+        font-size: 30px;
+        color: #fff;
+        line-height: 40px;
+    }
+    .home .container .homeRigth button {
+        width: 200px;
+    }
+    .home .container .homeRigth button .btnTXT{
+        transform: translateX(0);
+    }
+    .home .container .homeRigth button .btnIcon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .8s;
+        color: #000;
+    }
+    .home .container .homeRigth button:hover .btnIcon {
+        transform: translateX(160px);
+    }
+}

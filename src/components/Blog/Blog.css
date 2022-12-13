@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Roboto-M';
+    src: url(../../fonts/Roboto-Medium.ttf);
+}
+@font-face {
+    font-family: 'Roboto-L';
+    src: url(../../fonts/Roboto-Light.ttf);
+}
+.blog {
+    margin: 100px 0;
+}
+.blog .container .title {
+    text-align: center;
+    margin: 100px 0;
+    font-size: 30px;
+    font-family: 'Roboto-M', sans-serif;
+}
+.blog .container .title h1 {
+    color: #fff;
+}
+.blog .container .title h1 .blogTitle {
+    color: orange;
+    margin-left: 20px;
+}
+.blog .container section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.blog .container section .blogBlok {
+    max-width: 350px;
+    height: 450px;
+    background: #262626;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.blog .container section .blogBlok img {
+    transition: .5s;
+}
+.blog .container section .blogBlok:hover img{
+    transform: scale(120%);
+}
+.blog .container section .blogBlok:hover .blokTitle h2 {
+    color: orange;
+}
+.blog .container section .blogBlok .img {
+    max-width: 350px;
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 4px solid orange;
+}
+.blog .container section .blogBlok .blokTitle h2 {
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto-M', sans-serif;
+    transition: .5s;
+}
+.blog .container section .blogBlok .blokDesc {
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto-L', sans-serif;
+    margin-top: 10px;
+}
+@media (max-width: 1000px) {
+    .blog .container {
+        max-width: 800px;
+    }
+    .blog .container section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 760px) {
+    .blog .container {
+        max-width: 500px;
+        align-items: center;
+    }
+    .blog .container section {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media(max-width: 350px) {
+    .blog .container section .blogBlok {
+        max-width: 250px;
+    }
+}

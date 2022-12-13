@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'Roboto-L';
+    src: url(../../fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: 'Roboto-M';
+    src: url(../../fonts/Roboto-Medium.ttf);
+}
+.about .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+.about .container header h1 {
+    font-size: 60px;
+    color: #fff;
+    font-family: 'Roboto-M', sans-serif;
+    display: flex;
+    gap: 20px;
+}
+.about .container header h1 span {
+    color: orange;
+}
+.about .container section {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+}
+/* Section Left*/
+.about .container section .secLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.about .container section .secLeft .secLeftTop h2 {
+    color: #fff;
+    font-family: 'Roboto-M', sans-serif;
+}
+/* Section Left Mid*/
+.about .container section .secLeft .secLeftMid {
+    display: flex;
+    gap: 20px;
+}
+.about .container section .secLeft .secLeftMid .secLeftMidLeft,
+.about .container section .secLeft .secLeftMid .secLeftMidRight {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.about .container section .secLeft .secLeftMid .secLeftMidLeft h3,
+.about .container section .secLeft .secLeftMid .secLeftMidRight h3 {
+    color: #bebebe;
+    font-family: 'Roboto-L', sans-serif;
+}
+.about .container section .secLeft .secLeftMid .secLeftMidLeft h3 .info,
+.about .container section .secLeft .secLeftMid .secLeftMidRight h3 .info{
+    color: #fff;
+    font-size: 16px;
+}
+.about .container section .secLeft .secLeftMid .secLeftMidLeft h3 .av {
+    color: greenyellow;
+}
+/* Section Left Bottom */
+.about .container .secLeft .aboutSecBTN {
+    width: 250px;
+    height: 50px;
+    border: 1px solid orange;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 1s;
+}
+.about .container .secLeft .aboutSecBTN .btnTXT {
+    transform: translateX(20px);
+}
+.about .container .secLeft .aboutSecBTN .btnIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .8s;
+}
+.about .container .secLeft .aboutSecBTN:hover {
+    background: orange;
+}
+.about .container .secLeft .aboutSecBTN:hover .btnIcon {
+    transform: translateX(200px);
+}
+/* Section Left End*/
+
+/* Section Right */
+.about .container section .secRight {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.about .container section .secRight .secRightTitle h2 {
+    color: #fff;
+    font-family: 'Roboto-M';
+}
+
+.about .container section .secRight .cubs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+.about .container section .secRight .secRightCub {
+    width: 280px;
+    height: 180px;
+    border: 1px solid #424242;
+    background: #262626;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.about .container section .secRight .secRightCub .cubIcon {
+    font-size: 50px;
+    color: orange;
+}
+.about .container section .secRight .secRightCub h2 {
+    color: #fff;
+    font-family: 'Roboto-L', sans-serif;
+}
+/* Section end*/
+
+/* bottom */
+
+.about .container .bottom {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0;
+    gap: 50px;
+}
+.about .container .bottom .bottomTitle h2{
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto-M', sans-serif;
+}
+.about .container .bottom .bottomSkills {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 50px;
+}
+.about .container .bottom .bottomSkills .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.about .container .bottom .bottomSkills .skills h3 {
+    color: #fff;
+    font-family: 'Roboto-L', sans-serif;
+}
+.about .container .bottom .bottomSkills .skills h3 .num {
+    color: orange;
+}
+.about .container .bottom .bottomSkills .skills .round {
+    width: 150px;
+    height: 150px;
+    border: 12px solid orange;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px orange;
+    background: #262626;
+}
+@media (max-width: 950px) {
+    .about .container {
+        max-width: 850px;
+    }
+    .about .container section {
+        flex-direction: column;
+    }
+    .about .container .bottom .bottomSkills {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .about .container {
+        max-width: 480px;
+    }
+    .about .container section .secLeft {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about .container section .secLeft .secLeftMid {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .about .container section .secRight {
+        align-items: center;
+    }
+    .about .container section .secRight .cubs {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .about .container .bottom .bottomSkills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 390px) {
+    .about .container .bottom .bottomSkills {
+        grid-template-columns: repeat(1, 1fr);
+    }
+} 
