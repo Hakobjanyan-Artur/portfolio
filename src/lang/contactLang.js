@@ -11,7 +11,8 @@ const contactLang = {
         message: "Your Message",
         sendM: "Send Message",
         mesSent: "Message Sent",
-        mesError: "Message sending error"
+        mesError: "Message sending error",
+        inpErr: "Fill in all the fields"
     },
     ru: {
         getIn: "Связаться",
@@ -25,7 +26,8 @@ const contactLang = {
         message: "Ваше сообщение",
         sendM: "Отправить",
         mesSent: "Сообщение отправлено",
-        mesError: "Ошибка отправки сообщения"
+        mesError: "Ошибка отправки сообщения",
+        inpErr: "Заполните все поля"
     },
     am: {
         getIn: "Կապվեք",
@@ -39,7 +41,8 @@ const contactLang = {
         message: "ձեր ուղերձը",
         sendM: "Ուղարկել",
         mesSent: "Նամակը ուղարկված է",
-        mesError: "Հաղորդագրության ուղարկման սխալ"
+        mesError: "Հաղորդագրության ուղարկման սխալ",
+        inpErr: "Լրացրե՛ք բոլոր դաշտերը"
     }
 }
 

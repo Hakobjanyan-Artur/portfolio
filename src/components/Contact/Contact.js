@@ -21,7 +21,7 @@ function Contact() {
     const sent = useRef(null)
     const errorMes = useRef(null)
     const imgLoad = useRef(null)
-    const btn = useRef(null)
+    const errorInp = useRef(null)
     
     const lang = useSelector(selectLang)
 
@@ -29,8 +29,7 @@ function Contact() {
 
         e.preventDefault();
 
-        if (form[0] && form[1] && form[3]) {
-            load.current.style.display = 'flex'
+        load.current.style.display = 'flex'
         
             emailjs.sendForm('service_6i8jovt', 'template_4pkq3hg', form.current, 'PEAShtUceGWmqfxPS')
                   .then((result) => {
@@ -55,10 +54,14 @@ function Contact() {
                 })
 
           form.current.reset()
-          imgLoad.current.style.display = 'block'    
-        }else {
-            console.log('no no no')
-        }
+          imgLoad.current.style.display = 'block'
+
+        // if (form[0] && form[1] && form[3]) {
+            
+        //   errorInp.current.classList.toggle('block')    
+        // }else {
+        //     errorInp.current.classList.toggle('block')
+        // }
         
     }
 
@@ -169,7 +172,6 @@ function Contact() {
                                     placeholder={lang === 'eng' ? contactLang.eng.plName : lang === 'rus' ? contactLang.ru.plName : contactLang.am.plName}/>
                                     {/* Plemail */}
                                 <input 
-                                    onChange={() => btn.current.classList.add('.scale')}
                                     name="user_email"
                                     type="email" 
                                     placeholder={lang === 'eng' ? contactLang.eng.plEmail : lang === 'rus' ? contactLang.ru.plemail : contactLang.am.plEmail} />
@@ -185,7 +187,6 @@ function Contact() {
                                     placeholder={lang === 'eng' ? contactLang.eng.message : lang === 'rus' ? contactLang.ru.message : contactLang.am.message}>
                                 </textarea>
                                 <button
-                                    ref={btn} 
                                     className='contBtn'>
                                     <span 
                                         className='btnIcon'>
@@ -197,6 +198,11 @@ function Contact() {
                                         {lang === 'eng' ? contactLang.eng.sendM : lang === 'rus' ? contactLang.ru.sendM : contactLang.am.sendM}
                                     </span>
                                 </button>
+                                <div
+                                    ref={errorInp} 
+                                    className='err'>
+                                    <h2>{lang === 'eng' ? contactLang.eng.inpErr : lang === 'rus' ? contactLang.ru.inpErr: contactLang.am.inpErr}</h2>
+                                </div>
                         </form>
                     </div>
                 </section>
