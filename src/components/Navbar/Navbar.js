@@ -5,14 +5,18 @@ import { BsFillSunFill, BsFillMoonStarsFill} from "react-icons/bs"
 import { FaUserAlt} from "react-icons/fa"
 import { TiMessages } from "react-icons/ti"
 import { NavLink } from 'react-router-dom'
-import { useContext } from 'react'
+import { memo, useContext } from 'react'
 import { navCangeContext } from '../../App'
 import navbarLang from '../../lang/navbarLang'
+import { selectLang, togglelang } from '../../store/slices/langs/langsSlice'
+import { useDispatch, useSelector } from 'react-redux'
 
-function Navbar({togglelang, setTogglelang}) {
-   
+function Navbar() {
+    const lang = useSelector(selectLang)
+    const dispatch = useDispatch()
     const {navhiden} = useContext(navCangeContext)
     const {theme, toggleTheme} = useContext(navCangeContext)
+    
     return (
         <div style={{
             display: navhiden === 'true' ? 'none' : 'flex'
@@ -24,22 +28,22 @@ function Navbar({togglelang, setTogglelang}) {
                     <div className='lang'>
                         <div className='flag'><AiFillFlag />
                             <div className='toggleLang'>
-                                <h3 onClick={() => setTogglelang('eng')}>ENG</h3>
-                                <h3 onClick={() => setTogglelang('rus')}>РУС</h3>
-                                <h3 onClick={() => setTogglelang('arm')}>ՀԱՅ</h3>
+                                <h3 onClick={() => dispatch(togglelang('eng'))}>ENG</h3>
+                                <h3 onClick={() => dispatch(togglelang('rus'))}>РУС</h3>
+                                <h3 onClick={() => dispatch(togglelang('am'))}>ՀԱՅ</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div className='links'>
-                <div ><NavLink className={({isActive}) => isActive ? 'click' : 'content'} data-title={togglelang === 'eng' ? navbarLang.eng.home : togglelang === 'rus' ? navbarLang.ru.home: navbarLang.am.home} to={'/'} end ><AiFillHome/></NavLink></div>
-                <div ><NavLink className={({isActive}) => isActive ? 'click' : 'content'} data-title={togglelang === 'eng' ? navbarLang.eng.about : togglelang === 'rus' ? navbarLang.ru.about: navbarLang.am.about}  to={'/about'} ><FaUserAlt/></NavLink></div>
-                <div ><NavLink className={({isActive}) => isActive ? 'click' : 'content'} data-title={togglelang === 'eng' ? navbarLang.eng.contact : togglelang === 'rus' ? navbarLang.ru.contact: navbarLang.am.contact}  to={'/contact'} ><MdContactPhone/></NavLink></div>
-                <div ><NavLink className={({isActive}) => isActive ? 'click' : 'content'} data-title={togglelang === 'eng' ? navbarLang.eng.blog : togglelang === 'rus' ? navbarLang.ru.blog: navbarLang.am.blog}  to={'/blog'} ><TiMessages/></NavLink></div>
+                <div ><NavLink className={({isActive}) => isActive ? 'click' : 'content'} data-title={lang === 'eng' ? navbarLang.eng.home : lang === 'rus' ? navbarLang.ru.home: navbarLang.am.home} to={'/'} end ><AiFillHome/></NavLink></div>
+                <div ><NavLink className={({isActive}) => isActive ? 'click' : 'content'} data-title={lang === 'eng' ? navbarLang.eng.about : lang === 'rus' ? navbarLang.ru.about: navbarLang.am.about}  to={'/about'} ><FaUserAlt/></NavLink></div>
+                <div ><NavLink className={({isActive}) => isActive ? 'click' : 'content'} data-title={lang === 'eng' ? navbarLang.eng.contact : lang === 'rus' ? navbarLang.ru.contact: navbarLang.am.contact}  to={'/contact'} ><MdContactPhone/></NavLink></div>
+                <div ><NavLink className={({isActive}) => isActive ? 'click' : 'content'} data-title={lang === 'eng' ? navbarLang.eng.blog : lang === 'rus' ? navbarLang.ru.blog: navbarLang.am.blog}  to={'/blog'} ><TiMessages/></NavLink></div>
             </div>
         </div>
     )
 }
 
-export default Navbar
+export default memo(Navbar)

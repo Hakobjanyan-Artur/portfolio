@@ -2,9 +2,11 @@ import { useContext } from 'react'
 import { navCangeContext } from '../../App'
 import './Blog.css'
 import blogLang from '../../lang/blogLang'
+import { selectLang } from '../../store/slices/langs/langsSlice'
+import { useSelector } from 'react-redux'
 
-function Blog({togglelang}) {
-
+function Blog() {
+    const lang = useSelector(selectLang)
     const {theme } = useContext(navCangeContext)
     let color = theme === 'dark' ? '#fff' : '#000'
 
@@ -18,11 +20,11 @@ function Blog({togglelang}) {
                     <h1 
                         style={{color: color}} >
                         {/* My */}    
-                        {togglelang === 'eng' ? blogLang.eng.my: togglelang === 'rus' ? blogLang.ru.my : blogLang.am.my}  
+                        {lang === 'eng' ? blogLang.eng.my: lang === 'rus' ? blogLang.ru.my : blogLang.am.my}  
                         <span 
                             className='blogTitle'>
                             {/* Blog */}    
-                            {togglelang === 'eng' ? blogLang.eng.blog : togglelang === 'rus' ? blogLang.ru.blog : blogLang.am.blog}
+                            {lang === 'eng' ? blogLang.eng.blog : lang === 'rus' ? blogLang.ru.blog : blogLang.am.blog}
                         </span>
                     </h1>
                 </div>
@@ -38,14 +40,14 @@ function Blog({togglelang}) {
                             className='blokTitle'>
                             <h2>
                                 {/* Blog tilte */}
-                                {togglelang === 'eng' ? blogLang.eng.blogTitle : togglelang === 'rus' ? blogLang.ru.blogTitle : blogLang.am.blogTitle}
+                                {lang === 'eng' ? blogLang.eng.blogTitle : lang === 'rus' ? blogLang.ru.blogTitle : blogLang.am.blogTitle}
                             </h2>
                         </div>
                         <div 
                             className='blokDesc'>
                             <p>
                                 {/* Blog Content */}
-                                {togglelang === 'eng' ? blogLang.eng.blogContent : togglelang === 'rus' ? blogLang.ru.blogContent : blogLang.am.blogContent}
+                                {lang === 'eng' ? blogLang.eng.blogContent : lang === 'rus' ? blogLang.ru.blogContent : blogLang.am.blogContent}
                             </p>
                         </div>
                     </div>

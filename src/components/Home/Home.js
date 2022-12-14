@@ -9,10 +9,13 @@ import { BiMoviePlay } from "react-icons/bi";
 import { IoLogoGameControllerB } from "react-icons/io";
 import homeLang from '../../lang/homeLang'
 import cv from '../../cv/Resume Artur Hakobjanyan.pdf'
+import { useSelector } from 'react-redux'
+import { selectLang } from '../../store/slices/langs/langsSlice'
 
-function Home({togglelang}) {
+function Home() {
     const {changeNav, theme} = useContext(navCangeContext)
     const modalIframe = useRef(null)
+    const lang = useSelector(selectLang)
     
     const addClass = () => {
         modalIframe.current.classList.add('mh')
@@ -36,7 +39,7 @@ function Home({togglelang}) {
                     <span 
                         className='span'> 
                         {/* Name */}
-                        {togglelang === 'eng' ? homeLang.eng.myName : togglelang === 'rus' ? homeLang.ru.myName : homeLang.am.myName}
+                        {lang === 'eng' ? homeLang.eng.myName : lang === 'rus' ? homeLang.ru.myName : homeLang.am.myName}
                     </span>
                     <span 
                         className='h1' 
@@ -45,7 +48,7 @@ function Home({togglelang}) {
                             }}
                     >
                         {/* Profession */}
-                        {togglelang === 'eng' ? homeLang.eng.myProf : togglelang === 'rus' ? homeLang.ru.myProf : homeLang.am.myProf}
+                        {lang === 'eng' ? homeLang.eng.myProf : lang === 'rus' ? homeLang.ru.myProf : homeLang.am.myProf}
                     </span>
                     <p 
                         style={{
@@ -53,7 +56,7 @@ function Home({togglelang}) {
                             }}
                     >
                         {/* ShortInfo */}
-                        {togglelang === 'eng' ? homeLang.eng.shortInfo : togglelang === 'rus' ? homeLang.ru.shortInfo: homeLang.am.shortInfo}
+                        {lang === 'eng' ? homeLang.eng.shortInfo : lang === 'rus' ? homeLang.ru.shortInfo: homeLang.am.shortInfo}
                     </p>
                     <button 
                         onClick={addClass}>
@@ -67,7 +70,7 @@ function Home({togglelang}) {
                             }}
                         className='btnTXT'>
                             {/* BtnTxt */}
-                        {togglelang === 'eng' ? homeLang.eng.btnTXT : togglelang === 'rus' ? homeLang.ru.btnTXT : homeLang.am.btnTXT}
+                        {lang === 'eng' ? homeLang.eng.btnTXT : lang === 'rus' ? homeLang.ru.btnTXT : homeLang.am.btnTXT}
                         </span>
                     </button>
                 </div>
@@ -87,10 +90,10 @@ function Home({togglelang}) {
                             <header>
                                 <h1>
                                     {/* About */}
-                                    {togglelang === 'eng' ? homeLang.eng.about : togglelang === 'rus' ? homeLang.ru.about : homeLang.am.about} 
+                                    {lang === 'eng' ? homeLang.eng.about : lang === 'rus' ? homeLang.ru.about : homeLang.am.about} 
                                     <span>
                                     {/* Me */}
-                                    {togglelang === 'eng' ? homeLang.eng.me : togglelang === 'rus' ? homeLang.ru.me : homeLang.am.me}
+                                    {lang === 'eng' ? homeLang.eng.me : lang === 'rus' ? homeLang.ru.me : homeLang.am.me}
                                     </span>
                                 </h1>
                             </header>
@@ -101,7 +104,7 @@ function Home({togglelang}) {
                                         className='secLeftTop'>
                                         <h2>
                                             {/* Personal Info */}
-                                            {togglelang === 'eng' ? homeLang.eng.persInfo : togglelang === 'rus' ? homeLang.ru.persInfo : homeLang.am.persInfo}
+                                            {lang === 'eng' ? homeLang.eng.persInfo : lang === 'rus' ? homeLang.ru.persInfo : homeLang.am.persInfo}
                                         </h2>
                                     </div>
                                     <div 
@@ -110,94 +113,94 @@ function Home({togglelang}) {
                                         className='secLeftMidLeft'>
                                             <h3>
                                                 {/* First name */}
-                                                {togglelang === 'eng' ? homeLang.eng.firstName : togglelang === 'rus' ? homeLang.ru.firstName : homeLang.am.firstName}:  
+                                                {lang === 'eng' ? homeLang.eng.firstName : lang === 'rus' ? homeLang.ru.firstName : homeLang.am.firstName}:  
                                                 <span 
                                                     className='info'>
                                                     {/* Name */}    
-                                                    {togglelang === 'eng' ? homeLang.eng.Name : togglelang === 'rus' ? homeLang.ru.Name : homeLang.am.Name}
+                                                    {lang === 'eng' ? homeLang.eng.Name : lang === 'rus' ? homeLang.ru.Name : homeLang.am.Name}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Age */}    
-                                                {togglelang === 'eng' ? homeLang.eng.age : togglelang === 'rus' ? homeLang.ru.age : homeLang.am.age} 
+                                                {lang === 'eng' ? homeLang.eng.age : lang === 'rus' ? homeLang.ru.age : homeLang.am.age} 
                                                 <span 
                                                     className='info'>
                                                      {/* ageInfo */}   
-                                                    {togglelang === 'eng' ? homeLang.eng.ageInfo : togglelang === 'rus' ? homeLang.ru.ageInfo : homeLang.am.ageInfo}
+                                                    {lang === 'eng' ? homeLang.eng.ageInfo : lang === 'rus' ? homeLang.ru.ageInfo : homeLang.am.ageInfo}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* frilance */}
-                                                {togglelang === 'eng' ? homeLang.eng.frilance : togglelang === 'rus' ? homeLang.ru.frilance : homeLang.am.frilance}: 
+                                                {lang === 'eng' ? homeLang.eng.frilance : lang === 'rus' ? homeLang.ru.frilance : homeLang.am.frilance}: 
                                                 <span 
                                                     className='info av'>
                                                         {/* Avilable */}
-                                                    {togglelang === 'eng' ? homeLang.eng.avilable : togglelang === 'rus' ? homeLang.ru.avilable : homeLang.am.avilable}
+                                                    {lang === 'eng' ? homeLang.eng.avilable : lang === 'rus' ? homeLang.ru.avilable : homeLang.am.avilable}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Phone */}
-                                                {togglelang === 'eng' ? homeLang.eng.phone : togglelang === 'rus' ? homeLang.ru.phone : homeLang.am.phone}: 
+                                                {lang === 'eng' ? homeLang.eng.phone : lang === 'rus' ? homeLang.ru.phone : homeLang.am.phone}: 
                                                 <span 
                                                     className='info'>
                                                     {/* Phone Number */}    
-                                                    {togglelang === 'eng' ? homeLang.eng.phoneN : togglelang === 'rus' ? homeLang.ru.phoneN : homeLang.am.phoneN}
+                                                    {lang === 'eng' ? homeLang.eng.phoneN : lang === 'rus' ? homeLang.ru.phoneN : homeLang.am.phoneN}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Skype */}
-                                                {togglelang === 'eng' ? homeLang.eng.skype : togglelang === 'rus' ? homeLang.ru.skype : homeLang.am.skype}: 
+                                                {lang === 'eng' ? homeLang.eng.skype : lang === 'rus' ? homeLang.ru.skype : homeLang.am.skype}: 
                                                 <span 
                                                     className='info'>
                                                      {/* Skype Number */}   
-                                                    {togglelang === 'eng' ? homeLang.eng.skypeN : togglelang === 'rus' ? homeLang.ru.skypeN : homeLang.am.skypeN}
+                                                    {lang === 'eng' ? homeLang.eng.skypeN : lang === 'rus' ? homeLang.ru.skypeN : homeLang.am.skypeN}
                                                 </span>
                                             </h3>
                                         </div>
                                         <div className='secLeftMidRight'>
                                             <h3>
                                                 {/* Last name */}
-                                                {togglelang === 'eng' ? homeLang.eng.lastName : togglelang === 'rus' ? homeLang.ru.lastName : homeLang.am.lastName}: 
+                                                {lang === 'eng' ? homeLang.eng.lastName : lang === 'rus' ? homeLang.ru.lastName : homeLang.am.lastName}: 
                                                 <span 
                                                     className='info'>
                                                     {/* lasnName info */}    
-                                                    {togglelang === 'eng' ? homeLang.eng.lastNameI : togglelang === 'rus' ? homeLang.ru.lastNameI : homeLang.am.lastNameI}
+                                                    {lang === 'eng' ? homeLang.eng.lastNameI : lang === 'rus' ? homeLang.ru.lastNameI : homeLang.am.lastNameI}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Nationality */}
-                                                {togglelang === 'eng' ? homeLang.eng.nationality : togglelang === 'rus' ? homeLang.ru.nationality : homeLang.am.nationality}: 
+                                                {lang === 'eng' ? homeLang.eng.nationality : lang === 'rus' ? homeLang.ru.nationality : homeLang.am.nationality}: 
                                                 <span 
                                                     className='info'>
                                                     {/* Nation */}
-                                                    {togglelang === 'eng' ? homeLang.eng.nation : togglelang === 'rus' ? homeLang.ru.nation : homeLang.am.nation}
+                                                    {lang === 'eng' ? homeLang.eng.nation : lang === 'rus' ? homeLang.ru.nation : homeLang.am.nation}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Addres */}
-                                                {togglelang === 'eng' ? homeLang.eng.addres : togglelang === 'rus' ? homeLang.ru.addres : homeLang.am.addres}: 
+                                                {lang === 'eng' ? homeLang.eng.addres : lang === 'rus' ? homeLang.ru.addres : homeLang.am.addres}: 
                                                 <span 
                                                     className='info'>
                                                     {/* Addres info */}    
-                                                    {togglelang === 'eng' ? homeLang.eng.addresI : togglelang === 'rus' ? homeLang.ru.addresI : homeLang.am.addresI}
+                                                    {lang === 'eng' ? homeLang.eng.addresI : lang === 'rus' ? homeLang.ru.addresI : homeLang.am.addresI}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Email */}
-                                                {togglelang === 'eng' ? homeLang.eng.email : togglelang === 'rus' ? homeLang.ru.email : homeLang.am.email}: 
+                                                {lang === 'eng' ? homeLang.eng.email : lang === 'rus' ? homeLang.ru.email : homeLang.am.email}: 
                                                 <span 
                                                     className='info'>
                                                     {/* Email info */}    
-                                                    {togglelang === 'eng' ? homeLang.eng.emailI : togglelang === 'rus' ? homeLang.ru.emailI : homeLang.am.emailI}
+                                                    {lang === 'eng' ? homeLang.eng.emailI : lang === 'rus' ? homeLang.ru.emailI : homeLang.am.emailI}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Languages */}
-                                                {togglelang === 'eng' ? homeLang.eng.lang : togglelang === 'rus' ? homeLang.ru.lang : homeLang.am.lang}: 
+                                                {lang === 'eng' ? homeLang.eng.lang : lang === 'rus' ? homeLang.ru.lang : homeLang.am.lang}: 
                                                 <span 
                                                     className='info'>
                                                     {/* Languages info */}    
-                                                    {togglelang === 'eng' ? homeLang.eng.langI : togglelang === 'rus' ? homeLang.ru.langI : homeLang.am.langI}
+                                                    {lang === 'eng' ? homeLang.eng.langI : lang === 'rus' ? homeLang.ru.langI : homeLang.am.langI}
                                                 </span>
                                             </h3>
                                         </div>
@@ -224,7 +227,7 @@ function Home({togglelang}) {
                                         className='secRightTitle'>
                                         <h2>
                                             {/* Hobbies */}
-                                            {togglelang === 'eng' ? homeLang.eng.hobbies : togglelang === 'rus' ? homeLang.ru.hobbies : homeLang.am.hobbies}
+                                            {lang === 'eng' ? homeLang.eng.hobbies : lang === 'rus' ? homeLang.ru.hobbies : homeLang.am.hobbies}
                                         </h2>
                                     </div>
                                     <div 
@@ -235,7 +238,7 @@ function Home({togglelang}) {
                                                 className='cubIcon'><RiCodeBoxFill /></span>
                                                 <h2>
                                                 {/* Coding */}
-                                                {togglelang === 'eng' ? homeLang.eng.coding : togglelang === 'rus' ? homeLang.ru.coding : homeLang.am.coding}
+                                                {lang === 'eng' ? homeLang.eng.coding : lang === 'rus' ? homeLang.ru.coding : homeLang.am.coding}
                                                 </h2>
                                         </div>
                                         <div 
@@ -246,7 +249,7 @@ function Home({togglelang}) {
                                             </span>
                                             <h2>
                                                 {/* Web Desinger */}    
-                                                {togglelang === 'eng' ? homeLang.eng.webd : togglelang === 'rus' ? homeLang.ru.webd : homeLang.am.webd}
+                                                {lang === 'eng' ? homeLang.eng.webd : lang === 'rus' ? homeLang.ru.webd : homeLang.am.webd}
                                             </h2>
                                         </div>
                                         <div 
@@ -257,7 +260,7 @@ function Home({togglelang}) {
                                             </span>
                                             <h2>
                                                 {/* Movies */}
-                                                {togglelang === 'eng' ? homeLang.eng.movies : togglelang === 'rus' ? homeLang.ru.movies : homeLang.am.movies}
+                                                {lang === 'eng' ? homeLang.eng.movies : lang === 'rus' ? homeLang.ru.movies : homeLang.am.movies}
                                             </h2>
                                         </div>
                                         <div 
@@ -268,7 +271,7 @@ function Home({togglelang}) {
                                             </span>
                                             <h2>
                                                 {/* Video games */}
-                                                {togglelang === 'eng' ? homeLang.eng.videoGame : togglelang === 'rus' ? homeLang.ru.videoGame : homeLang.am.videoGame}
+                                                {lang === 'eng' ? homeLang.eng.videoGame : lang === 'rus' ? homeLang.ru.videoGame : homeLang.am.videoGame}
                                             </h2>
                                         </div>
                                     </div>
@@ -280,7 +283,7 @@ function Home({togglelang}) {
                                     className='bottomTitle'>
                                     <h2>
                                         {/* My Skils */}
-                                        {togglelang === 'eng' ? homeLang.eng.mySkils : togglelang === 'rus' ? homeLang.ru.mySkils : homeLang.am.mySkils}
+                                        {lang === 'eng' ? homeLang.eng.mySkils : lang === 'rus' ? homeLang.ru.mySkils : homeLang.am.mySkils}
                                     </h2>
                                 </div>
                                 <div 

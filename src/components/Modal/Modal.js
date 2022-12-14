@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import './Modal.css'
 import modalLang from '../../lang/modalLang'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLang, togglelang } from '../../store/slices/langs/langsSlice'
 
-function Modal({togglelang, setTogglelang}) {
+function Modal({setTogglelang}) {
+    const lang = useSelector(selectLang)
+    const dispatch = useDispatch()
     const divRef = useRef(null)
     const [num, setNum] = useState(10)
 
@@ -34,11 +38,11 @@ function Modal({togglelang, setTogglelang}) {
 
         let loc = await info.ip()
          if (loc.countryName === 'Armenia') {
-            setTogglelang('am')
+            dispatch(togglelang('am'))
          }else if (loc.countryName === 'Russia') {
-            setTogglelang('rus')
+            dispatch(togglelang('rus'))
          }else {
-            setTogglelang('eng')
+            dispatch(togglelang('eng'))
          }
       }
     
@@ -64,8 +68,8 @@ function Modal({togglelang, setTogglelang}) {
 
     return (
         <div ref={divRef} className='modal'>
-                <h1>{togglelang === 'eng' ? modalLang.eng.appTitle : togglelang === 'rus' ? modalLang.rus.appTitle : modalLang.am.appTitle}</h1>
-                <h3>{togglelang === 'eng' ? modalLang.eng.appTime : togglelang === 'rus' ? modalLang.rus.appTime : modalLang.am.appTime}<span>{num}</span></h3>
+                <h1>{lang === 'eng' ? modalLang.eng.appTitle : lang === 'rus' ? modalLang.rus.appTitle : modalLang.am.appTitle}</h1>
+                <h3>{lang === 'eng' ? modalLang.eng.appTime : lang === 'rus' ? modalLang.rus.appTime : modalLang.am.appTime}<span>{num}</span></h3>
                 <button onClick={() => divRef.current.style.display = 'none'}>
                     ok
                 </button>

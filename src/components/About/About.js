@@ -8,9 +8,12 @@ import { useContext } from 'react';
 import { navCangeContext } from '../../App';
 import cv from '../../cv/Resume Artur Hakobjanyan.pdf'
 import aboutLang from '../../lang/aboutlang';
+import { useSelector } from 'react-redux';
+import { selectLang } from '../../store/slices/langs/langsSlice';
 
-function About({togglelang}) {
+function About() {
     const {theme } = useContext(navCangeContext)
+    const lang = useSelector(selectLang)
 
     return (
                     <div 
@@ -24,10 +27,10 @@ function About({togglelang}) {
                                 }}
                                 >
                                     {/* About */}
-                                    {togglelang === 'eng' ? aboutLang.eng.about : togglelang === 'rus' ? aboutLang.ru.about : aboutLang.am.about} 
+                                    {lang === 'eng' ? aboutLang.eng.about : lang === 'rus' ? aboutLang.ru.about : aboutLang.am.about} 
                                     <span>
                                     {/* Me */}
-                                    {togglelang === 'eng' ? aboutLang.eng.me : togglelang === 'rus' ? aboutLang.ru.me : aboutLang.am.me}
+                                    {lang === 'eng' ? aboutLang.eng.me : lang === 'rus' ? aboutLang.ru.me : aboutLang.am.me}
                                     </span>
                                 </h1>
                             </header>
@@ -42,7 +45,7 @@ function About({togglelang}) {
                                         }}
                                         >
                                             {/* Personal Info */}
-                                            {togglelang === 'eng' ? aboutLang.eng.persInfo : togglelang === 'rus' ? aboutLang.ru.persInfo : aboutLang.am.persInfo}
+                                            {lang === 'eng' ? aboutLang.eng.persInfo : lang === 'rus' ? aboutLang.ru.persInfo : aboutLang.am.persInfo}
                                         </h2>
                                     </div>
                                     <div 
@@ -51,124 +54,124 @@ function About({togglelang}) {
                                         className='secLeftMidLeft'>
                                             <h3>
                                                 {/* First name */}
-                                                {togglelang === 'eng' ? aboutLang.eng.firstName : togglelang === 'rus' ? aboutLang.ru.firstName : aboutLang.am.firstName}:  
+                                                {lang === 'eng' ? aboutLang.eng.firstName : lang === 'rus' ? aboutLang.ru.firstName : aboutLang.am.firstName}:  
                                                 <span
                                                     style={{
                                                         color: theme === 'dark' ? '#fff' : '#000'
                                                     }} 
                                                     className='info'>
                                                     {/* Name */}    
-                                                    {togglelang === 'eng' ? aboutLang.eng.Name : togglelang === 'rus' ? aboutLang.ru.Name : aboutLang.am.Name}
+                                                    {lang === 'eng' ? aboutLang.eng.Name : lang === 'rus' ? aboutLang.ru.Name : aboutLang.am.Name}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Age */}    
-                                                {togglelang === 'eng' ? aboutLang.eng.age : togglelang === 'rus' ? aboutLang.ru.age : aboutLang.am.age} 
+                                                {lang === 'eng' ? aboutLang.eng.age : lang === 'rus' ? aboutLang.ru.age : aboutLang.am.age} 
                                                 <span
                                                     style={{
                                                         color: theme === 'dark' ? '#fff' : '#000'
                                                     }} 
                                                     className='info'>
                                                      {/* ageInfo */}   
-                                                    {togglelang === 'eng' ? aboutLang.eng.ageInfo : togglelang === 'rus' ? aboutLang.ru.ageInfo : aboutLang.am.ageInfo}
+                                                    {lang === 'eng' ? aboutLang.eng.ageInfo : lang === 'rus' ? aboutLang.ru.ageInfo : aboutLang.am.ageInfo}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* frilance */}
-                                                {togglelang === 'eng' ? aboutLang.eng.frilance : togglelang === 'rus' ? aboutLang.ru.frilance : aboutLang.am.frilance}: 
+                                                {lang === 'eng' ? aboutLang.eng.frilance : lang === 'rus' ? aboutLang.ru.frilance : aboutLang.am.frilance}: 
                                                 <span 
                                                     style={{
                                                         color: theme === 'dark' ? '#fff' : '#000'
                                                     }}
                                                     className='info av'>
                                                         {/* Avilable */}
-                                                    {togglelang === 'eng' ? aboutLang.eng.avilable : togglelang === 'rus' ? aboutLang.ru.avilable : aboutLang.am.avilable}
+                                                    {lang === 'eng' ? aboutLang.eng.avilable : lang === 'rus' ? aboutLang.ru.avilable : aboutLang.am.avilable}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Phone */}
-                                                {togglelang === 'eng' ? aboutLang.eng.phone : togglelang === 'rus' ? aboutLang.ru.phone : aboutLang.am.phone}: 
+                                                {lang === 'eng' ? aboutLang.eng.phone : lang === 'rus' ? aboutLang.ru.phone : aboutLang.am.phone}: 
                                                 <span 
                                                     style={{
                                                         color: theme === 'dark' ? '#fff' : '#000'
                                                     }}
                                                     className='info'>
                                                     {/* Phone Number */}    
-                                                    {togglelang === 'eng' ? aboutLang.eng.phoneN : togglelang === 'rus' ? aboutLang.ru.phoneN : aboutLang.am.phoneN}
+                                                    {lang === 'eng' ? aboutLang.eng.phoneN : lang === 'rus' ? aboutLang.ru.phoneN : aboutLang.am.phoneN}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Skype */}
-                                                {togglelang === 'eng' ? aboutLang.eng.skype : togglelang === 'rus' ? aboutLang.ru.skype : aboutLang.am.skype}: 
+                                                {lang === 'eng' ? aboutLang.eng.skype : lang === 'rus' ? aboutLang.ru.skype : aboutLang.am.skype}: 
                                                 <span 
                                                     style={{
                                                         color: theme === 'dark' ? '#fff' : '#000'
                                                     }}
                                                     className='info'>
                                                      {/* Skype Number */}   
-                                                    {togglelang === 'eng' ? aboutLang.eng.skypeN : togglelang === 'rus' ? aboutLang.ru.skypeN : aboutLang.am.skypeN}
+                                                    {lang === 'eng' ? aboutLang.eng.skypeN : lang === 'rus' ? aboutLang.ru.skypeN : aboutLang.am.skypeN}
                                                 </span>
                                             </h3>
                                         </div>
                                         <div className='secLeftMidRight'>
                                             <h3>
                                                 {/* Last name */}
-                                                {togglelang === 'eng' ? aboutLang.eng.lastName : togglelang === 'rus' ? aboutLang.ru.lastName : aboutLang.am.lastName}: 
+                                                {lang === 'eng' ? aboutLang.eng.lastName : lang === 'rus' ? aboutLang.ru.lastName : aboutLang.am.lastName}: 
                                                 <span 
                                                     style={{
                                                         color: theme === 'dark' ? '#fff' : '#000'
                                                     }}
                                                     className='info'>
                                                     {/* lasnName info */}    
-                                                    {togglelang === 'eng' ? aboutLang.eng.lastNameI : togglelang === 'rus' ? aboutLang.ru.lastNameI : aboutLang.am.lastNameI}
+                                                    {lang === 'eng' ? aboutLang.eng.lastNameI : lang === 'rus' ? aboutLang.ru.lastNameI : aboutLang.am.lastNameI}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Nationality */}
-                                                {togglelang === 'eng' ? aboutLang.eng.nationality : togglelang === 'rus' ? aboutLang.ru.nationality : aboutLang.am.nationality}: 
+                                                {lang === 'eng' ? aboutLang.eng.nationality : lang === 'rus' ? aboutLang.ru.nationality : aboutLang.am.nationality}: 
                                                 <span 
                                                     style={{
                                                         color: theme === 'dark' ? '#fff' : '#000'
                                                     }}
                                                     className='info'>
                                                     {/* Nation */}
-                                                    {togglelang === 'eng' ? aboutLang.eng.nation : togglelang === 'rus' ? aboutLang.ru.nation : aboutLang.am.nation}
+                                                    {lang === 'eng' ? aboutLang.eng.nation : lang === 'rus' ? aboutLang.ru.nation : aboutLang.am.nation}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Addres */}
-                                                {togglelang === 'eng' ? aboutLang.eng.addres : togglelang === 'rus' ? aboutLang.ru.addres : aboutLang.am.addres}: 
+                                                {lang === 'eng' ? aboutLang.eng.addres : lang === 'rus' ? aboutLang.ru.addres : aboutLang.am.addres}: 
                                                 <span 
                                                     style={{
                                                         color: theme === 'dark' ? '#fff' : '#000'
                                                     }}
                                                     className='info'>
                                                     {/* Addres info */}    
-                                                    {togglelang === 'eng' ? aboutLang.eng.addresI : togglelang === 'rus' ? aboutLang.ru.addresI : aboutLang.am.addresI}
+                                                    {lang === 'eng' ? aboutLang.eng.addresI : lang === 'rus' ? aboutLang.ru.addresI : aboutLang.am.addresI}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Email */}
-                                                {togglelang === 'eng' ? aboutLang.eng.email : togglelang === 'rus' ? aboutLang.ru.email : aboutLang.am.email}: 
+                                                {lang === 'eng' ? aboutLang.eng.email : lang === 'rus' ? aboutLang.ru.email : aboutLang.am.email}: 
                                                 <span 
                                                     style={{
                                                         color: theme === 'dark' ? '#fff' : '#000'
                                                     }}
                                                     className='info'>
                                                     {/* Email info */}    
-                                                    {togglelang === 'eng' ? aboutLang.eng.emailI : togglelang === 'rus' ? aboutLang.ru.emailI : aboutLang.am.emailI}
+                                                    {lang === 'eng' ? aboutLang.eng.emailI : lang === 'rus' ? aboutLang.ru.emailI : aboutLang.am.emailI}
                                                 </span>
                                             </h3>
                                             <h3>
                                                 {/* Languages */}
-                                                {togglelang === 'eng' ? aboutLang.eng.lang : togglelang === 'rus' ? aboutLang.ru.lang : aboutLang.am.lang}: 
+                                                {lang === 'eng' ? aboutLang.eng.lang : lang === 'rus' ? aboutLang.ru.lang : aboutLang.am.lang}: 
                                                 <span 
                                                     style={{
                                                         color: theme === 'dark' ? '#fff' : '#000'
                                                     }}
                                                     className='info'>
                                                     {/* Languages info */}    
-                                                    {togglelang === 'eng' ? aboutLang.eng.langI : togglelang === 'rus' ? aboutLang.ru.langI : aboutLang.am.langI}
+                                                    {lang === 'eng' ? aboutLang.eng.langI : lang === 'rus' ? aboutLang.ru.langI : aboutLang.am.langI}
                                                 </span>
                                             </h3>
                                         </div>
@@ -202,7 +205,7 @@ function About({togglelang}) {
                                             }}
                                         >
                                             {/* Hobbies */}
-                                            {togglelang === 'eng' ? aboutLang.eng.hobbies : togglelang === 'rus' ? aboutLang.ru.hobbies : aboutLang.am.hobbies}
+                                            {lang === 'eng' ? aboutLang.eng.hobbies : lang === 'rus' ? aboutLang.ru.hobbies : aboutLang.am.hobbies}
                                         </h2>
                                     </div>
                                     <div 
@@ -213,7 +216,7 @@ function About({togglelang}) {
                                                 className='cubIcon'><RiCodeBoxFill /></span>
                                                 <h2>
                                                 {/* Coding */}
-                                                {togglelang === 'eng' ? aboutLang.eng.coding : togglelang === 'rus' ? aboutLang.ru.coding : aboutLang.am.coding}
+                                                {lang === 'eng' ? aboutLang.eng.coding : lang === 'rus' ? aboutLang.ru.coding : aboutLang.am.coding}
                                                 </h2>
                                         </div>
                                         <div 
@@ -224,7 +227,7 @@ function About({togglelang}) {
                                             </span>
                                             <h2>
                                                 {/* Web Desinger */}    
-                                                {togglelang === 'eng' ? aboutLang.eng.webd : togglelang === 'rus' ? aboutLang.ru.webd : aboutLang.am.webd}
+                                                {lang === 'eng' ? aboutLang.eng.webd : lang === 'rus' ? aboutLang.ru.webd : aboutLang.am.webd}
                                             </h2>
                                         </div>
                                         <div 
@@ -235,7 +238,7 @@ function About({togglelang}) {
                                             </span>
                                             <h2>
                                                 {/* Movies */}
-                                                {togglelang === 'eng' ? aboutLang.eng.movies : togglelang === 'rus' ? aboutLang.ru.movies : aboutLang.am.movies}
+                                                {lang === 'eng' ? aboutLang.eng.movies : lang === 'rus' ? aboutLang.ru.movies : aboutLang.am.movies}
                                             </h2>
                                         </div>
                                         <div 
@@ -246,7 +249,7 @@ function About({togglelang}) {
                                             </span>
                                             <h2>
                                                 {/* Video games */}
-                                                {togglelang === 'eng' ? aboutLang.eng.videoGame : togglelang === 'rus' ? aboutLang.ru.videoGame : aboutLang.am.videoGame}
+                                                {lang === 'eng' ? aboutLang.eng.videoGame : lang === 'rus' ? aboutLang.ru.videoGame : aboutLang.am.videoGame}
                                             </h2>
                                         </div>
                                     </div>
@@ -262,7 +265,7 @@ function About({togglelang}) {
                                         }}
                                     >
                                         {/* My Skils */}
-                                        {togglelang === 'eng' ? aboutLang.eng.mySkils : togglelang === 'rus' ? aboutLang.ru.mySkils : aboutLang.am.mySkils}
+                                        {lang === 'eng' ? aboutLang.eng.mySkils : lang === 'rus' ? aboutLang.ru.mySkils : aboutLang.am.mySkils}
                                     </h2>
                                 </div>
                                 <div 

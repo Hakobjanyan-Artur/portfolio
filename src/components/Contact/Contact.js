@@ -9,9 +9,11 @@ import contactLang from '../../lang/contactLang'
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import preloadImg from '../../images/loading-11.gif'
+import { useSelector } from 'react-redux'
+import { selectLang } from '../../store/slices/langs/langsSlice'
 
-function Contact({togglelang}) {
-
+function Contact() {
+    const lang = useSelector(selectLang)
     const {theme } = useContext(navCangeContext)
     let color = theme === 'dark' ? '#fff' : '#000'
     const form = useRef(null)
@@ -49,8 +51,8 @@ function Contact({togglelang}) {
             <div
                 ref={load} 
                 className='load'>
-                <h2 className='sent' ref={sent}>{togglelang === 'eng' ? contactLang.eng.mesSent : togglelang === 'rus' ? contactLang.ru.mesSent : contactLang.am.mesSent}</h2>    
-                <h2 className='err' ref={errorMes}>{togglelang === 'eng' ? contactLang.eng.mesError : togglelang === 'rus' ? contactLang.ru.mesError : contactLang.am.mesError}</h2>    
+                <h2 className='sent' ref={sent}>{lang === 'eng' ? contactLang.eng.mesSent : lang === 'rus' ? contactLang.ru.mesSent : contactLang.am.mesSent}</h2>    
+                <h2 className='err' ref={errorMes}>{lang === 'eng' ? contactLang.eng.mesError : lang === 'rus' ? contactLang.ru.mesError : contactLang.am.mesError}</h2>    
                 <img ref={imgLoad} src={preloadImg} alt="" />
             </div>
             <div 
@@ -61,11 +63,11 @@ function Contact({togglelang}) {
                         <h1 
                             style={{color: color}}>
                                 {/* Get in */}
-                            {togglelang === 'eng' ? contactLang.eng.getIn : togglelang === 'rus' ? contactLang.ru.getIn : contactLang.am.getIn}
+                            {lang === 'eng' ? contactLang.eng.getIn : lang === 'rus' ? contactLang.ru.getIn : contactLang.am.getIn}
                             <span 
                                 className='touch'>
                                 {/* Touch */}    
-                                {togglelang === 'eng' ? contactLang.eng.touch : togglelang === 'rus' ? contactLang.ru.touch : contactLang.am.touch}
+                                {lang === 'eng' ? contactLang.eng.touch : lang === 'rus' ? contactLang.ru.touch : contactLang.am.touch}
                             </span>
                         </h1>
                     </div>
@@ -78,12 +80,12 @@ function Contact({togglelang}) {
                             <h2 
                                 style={{color: color}}>
                                     {/* Dont shi */}
-                                {togglelang === 'eng' ? contactLang.eng.dontShi : togglelang === 'rus' ? contactLang.ru.dontShi : contactLang.am.dontShi}
+                                {lang === 'eng' ? contactLang.eng.dontShi : lang === 'rus' ? contactLang.ru.dontShi : contactLang.am.dontShi}
                             </h2>
                             <p 
                                 style={{color: color}}>
                                 {/* ContancP */}    
-                                {togglelang === 'eng' ? contactLang.eng.contactP : togglelang === 'rus' ? contactLang.ru.contactP : contactLang.am.contactP}
+                                {lang === 'eng' ? contactLang.eng.contactP : lang === 'rus' ? contactLang.ru.contactP : contactLang.am.contactP}
                             </p>
                         </div>
                         <div 
@@ -96,7 +98,7 @@ function Contact({togglelang}) {
                                 </span>
                                 <h3 
                                     style={{color: color}}>
-                                    {togglelang === 'eng' ? contactLang.eng.addres : togglelang === 'rus' ? contactLang.ru.addres : contactLang.am.addres}
+                                    {lang === 'eng' ? contactLang.eng.addres : lang === 'rus' ? contactLang.ru.addres : contactLang.am.addres}
                                 </h3>
                             </div>
                             <div 
@@ -147,22 +149,22 @@ function Contact({togglelang}) {
                                 <input
                                     name="user_name" 
                                     type="text"
-                                    placeholder={togglelang === 'eng' ? contactLang.eng.plName : togglelang === 'rus' ? contactLang.ru.plName : contactLang.am.plName}/>
+                                    placeholder={lang === 'eng' ? contactLang.eng.plName : lang === 'rus' ? contactLang.ru.plName : contactLang.am.plName}/>
                                     {/* plemail */}
                                 <input 
                                     name="user_email"
                                     type="txt" 
-                                    placeholder={togglelang === 'eng' ? contactLang.eng.plEmail : togglelang === 'rus' ? contactLang.ru.plemail : contactLang.am.plEmail} />
+                                    placeholder={lang === 'eng' ? contactLang.eng.plEmail : lang === 'rus' ? contactLang.ru.plemail : contactLang.am.plEmail} />
                             </div>
                                     {/* Subject */}
                                 <input
                                     name="subject_txt" 
                                     type="text" 
-                                    placeholder={togglelang === 'eng' ? contactLang.eng.subject : togglelang === 'rus' ? contactLang.ru.subject : contactLang.am.subject}/>
+                                    placeholder={lang === 'eng' ? contactLang.eng.subject : lang === 'rus' ? contactLang.ru.subject : contactLang.am.subject}/>
                                     {/* Message */}
                                 <textarea
                                     name="message" 
-                                    placeholder={togglelang === 'eng' ? contactLang.eng.message : togglelang === 'rus' ? contactLang.ru.message : contactLang.am.message}>
+                                    placeholder={lang === 'eng' ? contactLang.eng.message : lang === 'rus' ? contactLang.ru.message : contactLang.am.message}>
                                 </textarea>
                                 <button 
                                     className='contBtn'>
@@ -173,7 +175,7 @@ function Contact({togglelang}) {
                                     <span 
                                         style={{color: color}} 
                                         className='btnTXT'>
-                                        {togglelang === 'eng' ? contactLang.eng.sendM : togglelang === 'rus' ? contactLang.ru.sendM : contactLang.am.sendM}
+                                        {lang === 'eng' ? contactLang.eng.sendM : lang === 'rus' ? contactLang.ru.sendM : contactLang.am.sendM}
                                     </span>
                                 </button>
                         </form>
