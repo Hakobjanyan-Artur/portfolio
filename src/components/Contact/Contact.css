@@ -167,6 +167,10 @@
     align-items: center;
     cursor: pointer;
     transition: 1s;
+    transform: scale(0);
+}
+.contact .container .contBtn .scale {
+    transform: scale(100%);
 }
 .contact .container .contBtn .btnTXT {
     transform: translateX(20px);

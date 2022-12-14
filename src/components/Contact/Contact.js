@@ -13,37 +13,54 @@ import { useSelector } from 'react-redux'
 import { selectLang } from '../../store/slices/langs/langsSlice'
 
 function Contact() {
-    const lang = useSelector(selectLang)
     const {theme } = useContext(navCangeContext)
     let color = theme === 'dark' ? '#fff' : '#000'
+    
     const form = useRef(null)
     const load = useRef(null)
     const sent = useRef(null)
     const errorMes = useRef(null)
     const imgLoad = useRef(null)
+    const btn = useRef(null)
+    
+    const lang = useSelector(selectLang)
 
     const sendEmail = (e) => {
+
         e.preventDefault();
-        load.current.style.display = 'flex'
-        emailjs.sendForm('service_6i8jovt', 'template_4pkq3hg', form.current, 'PEAShtUceGWmqfxPS')
-          .then((result) => {
-            imgLoad.current.style.display = 'none'
-            sent.current.style.display = 'block'
-            setTimeout(() => {
-                load.current.style.display = 'none'
-                sent.current.style.display = 'none'
-            }, 2000)  
-          }, (error) => {
-            errorMes.current.style.display = 'block'
-            setTimeout(() => {
-                imgLoad.current.style.display = 'none'
-                load.current.style.display = 'none'
-                errorMes.current.style.display = 'none'
-            }, 2000)
-          })
+
+        if (form[0] && form[1] && form[3]) {
+            load.current.style.display = 'flex'
+        
+            emailjs.sendForm('service_6i8jovt', 'template_4pkq3hg', form.current, 'PEAShtUceGWmqfxPS')
+                  .then((result) => {
+                    imgLoad.current.style.display = 'none'
+                    sent.current.style.display = 'block'
+                    
+                    setTimeout(() => {
+                        load.current.style.display = 'none'
+                        sent.current.style.display = 'none'
+                    }, 2000)
+
+                 }, 
+                (error) => {
+                    errorMes.current.style.display = 'block'
+
+                    setTimeout(() => {
+                        imgLoad.current.style.display = 'none'
+                        load.current.style.display = 'none'
+                        errorMes.current.style.display = 'none'
+                    }, 2000)
+
+                })
+
           form.current.reset()
-          imgLoad.current.style.display = 'block'
-      }
+          imgLoad.current.style.display = 'block'    
+        }else {
+            console.log('no no no')
+        }
+        
+    }
 
     return (
         <div 
@@ -150,10 +167,11 @@ function Contact() {
                                     name="user_name" 
                                     type="text"
                                     placeholder={lang === 'eng' ? contactLang.eng.plName : lang === 'rus' ? contactLang.ru.plName : contactLang.am.plName}/>
-                                    {/* plemail */}
+                                    {/* Plemail */}
                                 <input 
+                                    onChange={() => btn.current.classList.add('.scale')}
                                     name="user_email"
-                                    type="txt" 
+                                    type="email" 
                                     placeholder={lang === 'eng' ? contactLang.eng.plEmail : lang === 'rus' ? contactLang.ru.plemail : contactLang.am.plEmail} />
                             </div>
                                     {/* Subject */}
@@ -166,7 +184,8 @@ function Contact() {
                                     name="message" 
                                     placeholder={lang === 'eng' ? contactLang.eng.message : lang === 'rus' ? contactLang.ru.message : contactLang.am.message}>
                                 </textarea>
-                                <button 
+                                <button
+                                    ref={btn} 
                                     className='contBtn'>
                                     <span 
                                         className='btnIcon'>
