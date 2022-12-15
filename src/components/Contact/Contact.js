@@ -29,7 +29,8 @@ function Contact() {
 
         e.preventDefault();
 
-        load.current.style.display = 'flex'
+        if (form.current[0].value !== '' && form.current[1] !== '' && form.current[2] !== '' && form.current[3] !== '') {
+            load.current.style.display = 'flex'
         
             emailjs.sendForm('service_6i8jovt', 'template_4pkq3hg', form.current, 'PEAShtUceGWmqfxPS')
                   .then((result) => {
@@ -54,14 +55,11 @@ function Contact() {
                 })
 
           form.current.reset()
-          imgLoad.current.style.display = 'block'
-
-        // if (form[0] && form[1] && form[3]) {
-            
-        //   errorInp.current.classList.toggle('block')    
-        // }else {
-        //     errorInp.current.classList.toggle('block')
-        // }
+          errorInp.current.classList.remove('block')  
+          imgLoad.current.style.display = 'block'   
+        }else {
+            errorInp.current.classList.add('block')
+        }
         
     }
 
