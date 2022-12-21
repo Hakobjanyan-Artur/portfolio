@@ -8,6 +8,7 @@ import Blog from './components/Blog/Blog';
 import { createContext } from 'react';
 import changes from './hoc/changes';
 import Modal from './components/Modal/Modal';
+import Recommendations from './components/ Recommendations/Recommendation';
 
 export const navCangeContext = createContext()
 function App({navhiden, changeNav, theme, toggleTheme}) {
@@ -26,6 +27,7 @@ function App({navhiden, changeNav, theme, toggleTheme}) {
                   <Route path='about' element={<About />}/>
                   <Route path='contact' element={<Contact />}/>
                   <Route path='blog' element={<Blog />}/>
+                  <Route path='rec' element={<Recommendations />}/>
               </Route>
               </Routes>
             </navCangeContext.Provider> 

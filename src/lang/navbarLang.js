@@ -3,19 +3,22 @@ const navbarLang = {
         home: "Home",
         about: "About",
         contact: "Contact",
-        blog: "Blog"
+        blog: "Blog",
+        recommendation: "Rec."
     },
     ru: {
         home: "Главная",
         about: "Обо мне",
         contact: "Контакт",
-        blog: "Блог"
+        blog: "Блог",
+        recommendation: "Рек."
     },
     am: {
         home: "հիմնական",
         about: "Իմ մասին",
         contact: "Կապ",
-        blog: "Բլոգ"
+        blog: "Բլոգ",
+        recommendation: "Հանձ."
     }
 }
 

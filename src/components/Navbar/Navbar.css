@@ -170,7 +170,7 @@
         width: auto;
         top: auto;
         padding-top: 5px;
-        gap: 100px;
+        gap: 80px;
     }
     .links {
         flex-direction: row;
@@ -203,12 +203,28 @@
     }
 
 }
+@media(max-width: 900px) {
+    .navbar {
+        gap: 70px;
+    }
+    .links {
+        gap: 70px;
+    }
+}
 @media(max-width: 760px) {
     .navbar{
         gap: 50px;
     }
     .links {
         gap: 50px;
+    }
+}
+@media(max-width: 650px) {
+    .navbar {
+        gap: 30px;
+    }
+    .links {
+        gap: 30px;
     }
 }
 @media(max-width: 530px) {
@@ -219,7 +235,15 @@
         gap: 20px;
     }
 }
-@media(max-width: 390px) {
+@media(max-width: 475px) {
+    .navbar {
+        left: 15%;
+    }
+    .links {
+        gap: 10px;
+    }
+}
+@media(max-width: 416px) {
     .navbar{
         left: 10%;
         gap: 10px;
@@ -228,12 +252,12 @@
         gap: 10px;
     }
 }
-@media(max-width: 330px) {
+@media(max-width: 385px) {
     .navbar{
-        left: 5%;
-        gap: 10px;
+        flex-direction: column;
+        bottom: 50px;
     }
     .links {
-        gap: 10px;
+        gap: 5px;
     }
 }

@@ -1,0 +1,174 @@
+.recommend .container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    align-items: center;
+    gap: 50px;
+}
+.recommend .container .title {
+    color: #fff;
+    font-size: 30px;
+}
+.recommend .container .title span{
+    color: orange;
+}
+.recommend .container .recModal {
+    width: 270px;
+    height: 50px;
+    border: 1px solid orange;
+    border-radius: 30px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .8s;
+}
+.recommend .container .recModal:hover {
+    background: orange;
+}
+.recommend .container section .rec {
+    max-width: 500px;
+    max-height: 300px;
+    border-radius: 10px;
+    border: 1px solid #424242;
+    overflow: hidden;
+}
+.recommend .container section .rec .header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
+    padding: 0 10px;
+    color: #fff;
+}
+.recommend .container section .rec .header .organ {
+    color: orange;
+}
+.recommend .container section .rec .header .logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.recommend .container section .rec .section .relationship{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: #262626;
+    border-top: 2px solid orange;
+    border-bottom: 2px solid orange;
+    padding: 10px 0;
+}
+.recommend .container section .rec .section .relationship h2 {
+    color: orange;
+} 
+.recommend .container section .rec .section .relationship p {
+    color: #fff;
+}
+.recommend .container section .rec .section .addRec {
+    width: 100%;
+    height: 150px;
+    overflow-y: auto;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    background: #262626;
+}
+.recommend .modal {
+    width: 100%;
+    height: 100%;
+    background: #26262677;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+}
+.recommend .modal .recForm {
+    width: 500px;
+    height: 600px;
+    background: #262626;
+    box-shadow: 0 0 20px orange;
+    border-radius: 30px;
+    padding-top: 20px;
+}
+.recommend .modal .recForm form {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.recommend .modal .recForm form .file {
+    margin-top: 30px;
+}
+.recommend .modal .recForm form .org, .recommend .modal .recForm form .relation {
+    width: 400px;
+    height: 40px;
+    border: none;
+    background-color: #424242;
+    border-radius: 10px;
+    padding-left: 20px;
+    font-size: 18px;
+    outline: none;
+    color: #fff;
+}
+.recommend .modal .recForm form textarea {
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+    outline: none;
+    background: #424242;
+    padding: 15px;
+    font-size: 18px;
+    color: #fff;
+    border: none;
+}
+.recommend .modal .recForm form button {
+    width: 250px;
+    height: 50px;
+    border: 1px solid orange;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 1s;
+}
+.recommend .modal .recForm form .btnTxt {
+    transform: translateX(50px);
+}
+.recommend .modal .recForm form button .btnIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .8s;
+}
+.recommend .modal .recForm form button:hover .btnIcon {
+    transform: translateX(200px);
+}
+.recommend .modal .recForm form button:hover {
+    background: orange;
+}
+@media(max-width: 350px) {
+    .recommend .container .title {
+        font-size: 25px;
+    }
+}
