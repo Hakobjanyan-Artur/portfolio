@@ -167,6 +167,28 @@
 .recommend .modal .recForm form button:hover {
     background: orange;
 }
+@media(max-width: 530px) {
+    .recommend .modal .recForm {
+        width: 400px;
+    }
+    .recommend .modal .recForm form .org, .recommend .modal .recForm form .relation, .recommend .modal .recForm form textarea {
+        width: 300px;
+        font-size: 14px;
+    }
+}
+@media(max-width: 530px) {
+    .recommend .modal .recForm {
+        width: 300px;
+    }
+    .recommend .modal .recForm form .org, .recommend .modal .recForm form .relation, .recommend .modal .recForm form textarea {
+        width: 200px;
+        font-size: 12px;
+        padding-left: 0;
+    }
+    .recommend .modal .recForm form textarea {
+        height: 100px;
+    }
+}
 @media(max-width: 350px) {
     .recommend .container .title {
         font-size: 25px;
