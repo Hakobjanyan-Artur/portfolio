@@ -176,7 +176,7 @@
         font-size: 14px;
     }
 }
-@media(max-width: 530px) {
+@media(max-width: 415px) {
     .recommend .modal .recForm {
         width: 300px;
     }
