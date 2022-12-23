@@ -4,9 +4,12 @@ import recLang from '../../lang/recLang'
 import { useSelector } from 'react-redux'
 import { selectLang } from '../../store/slices/langs/langsSlice'
 import {FaTelegramPlane} from "react-icons/fa"
+import { useRef } from 'react'
 
 function Recommendations() {
     const lang = useSelector(selectLang)
+    const recModal = useRef(null)
+
     return(
         <div 
             className='recommend'>
@@ -21,7 +24,8 @@ function Recommendations() {
                         </span>
                     </h1>    
                 </div>
-                <div 
+                <div
+                    onClick={() => recModal.current.style.display = 'flex'} 
                     className='recModal'>
                     {lang === 'eng' ? recLang.eng.recBtn : lang === 'rus' ? recLang.ru.recBtn : recLang.am.recBtn} +
                 </div>
@@ -58,10 +62,15 @@ function Recommendations() {
                     </div>
                 </section>
             </div>
-            <div 
+            <div
+                ref={recModal} 
                 className='modal'>
                     <div 
                         className='recForm'>
+                        <span
+                            onClick={() => recModal.current.style.display = 'none'}> 
+                            X 
+                        </span>
                         <h2>
                             {lang === 'eng' ? recLang.eng.recBtn : lang === 'rus' ? recLang.ru.recBtn : recLang.am.recBtn}
                         </h2>    

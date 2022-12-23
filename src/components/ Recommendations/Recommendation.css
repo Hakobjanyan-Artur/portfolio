@@ -91,7 +91,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: none; */
+    display: none;
 }
 .recommend .modal .recForm {
     width: 500px;
@@ -100,6 +100,18 @@
     box-shadow: 0 0 20px orange;
     border-radius: 30px;
     padding-top: 20px;
+    position: relative;
+}
+.recommend .modal .recForm span {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: orange;
+    cursor: pointer;
+    transition: .4s;
+}
+.recommend .modal .recForm span:hover {
+    color: red;
 }
 .recommend .modal .recForm form {
     width: 100%;
