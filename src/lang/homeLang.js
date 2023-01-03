@@ -2,7 +2,7 @@ const homeLang = {
     eng: {
         myName: "I'M ARTUR HAKOBJANYAN",
         myProf: "WEB DEVELOPER",
-        shortInfo: "I am a web designer and front-end developer from Armenia, I love the IT world. I am passionate about creating  great   software that improves the lives of the people around me. open to new opportunities in front-end development.",
+        shortInfo: "I am front-end developer from Armenia, I love the IT world. I am passionate about creating  great   software that improves the lives of the people around me. open to new opportunities in front-end development.",
         btnTXT: "More About Me",
         about: "About",
         me: "Me",
@@ -37,7 +37,7 @@ const homeLang = {
     ru: {
         myName: "Я АРТУР АКОБДЖАНЯН",
         myProf: "ВЕБ РАЗРАБОТЧИК",
-        shortInfo: "Я веб-дизайнер и фронтенд-разработчик из Армении, люблю мир IT. Я увлечен созданием отличного программного  обеспечения, которое улучшает жизнь окружающих меня людей. открыты для новых возможностей в Front-End разработке.",
+        shortInfo: "Я Front-End разработчик из Армении, люблю мир IT. Я увлечен созданием отличного программного  обеспечения, которое улучшает жизнь окружающих меня людей. открыты для новых возможностей в Front-End разработке.",
         btnTXT: "Больше обо мне",
         about: "Обо",
         me: "Мне",
@@ -72,7 +72,7 @@ const homeLang = {
     am: {
         myName: "ԵՍ ԱՐԹՈՒՐ ՀԱԿՈԲՋԱՆՅԱՆՆ ԵՄ",
         myProf: "ՎԵԲ ԾՐԱԳՐԱՎՈՐՈՂ",
-        shortInfo: "Ես վեբ դիզայներ և Front-End ծրագրավորող եմ Հայաստանից, սիրում եմ IT աշխարհը։ Ես տարված եմ լավ ծրագրաշար     ստեղծելով, որը բարելավում է ինձ շրջապատող մարդկանց կյանքը: բաց եմ Front-End զարգացման նոր հնարավորությունների համար:",
+        shortInfo: "Ես Front-End ծրագրավորող եմ Հայաստանից, սիրում եմ IT աշխարհը։ Ես տարված եմ լավ ծրագրաշար     ստեղծելով, որը բարելավում է ինձ շրջապատող մարդկանց կյանքը: բաց եմ Front-End զարգացման նոր հնարավորությունների համար:",
         btnTXT: "Ավելին իմ մասին",
         about: "իմ",
         me: "Մասին",

@@ -5,20 +5,30 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectLang } from '../../store/slices/langs/langsSlice'
 import {FaTelegramPlane} from "react-icons/fa"
 import { useRef, useState } from 'react'
-import { addNewRec } from '../../store/slices/recommendSlices/recommendslices'
-
+import { addNewRec, selectrecommend, getData } from '../../store/slices/recommendSlices/recommendslices'
 function Recommendations() {
+
+    const {data} = useSelector(selectrecommend)
     const lang = useSelector(selectLang)
     const recModal = useRef(null)
+    const formRef = useRef(null)
     const [newName, setNewName] = useState('')
     const [newRelation, setNewRelation] = useState('')
     const [newRecommend, setNewRecommend] = useState('')
-    const formRef = useRef(null)
+    
     const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(addNewRec({name: newName, relation: newRelation, recommend: newRecommend}))
+        let file = formRef.current[0].files[0]
+
+        if (file.size < 1048576 && formRef.current[1] && formRef.current[2] && formRef.current[3]) {
+            dispatch(addNewRec({name: newName, relation: newRelation, recommend: newRecommend, file: file}))
+            dispatch(getData({name: newName, relation: newRelation, recommend: newRecommend, file: file})) // ?
+        }else {
+            console.log('error');
+        }
+        console.log(data);
         formRef.current.reset()
     }
 
